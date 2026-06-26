@@ -154,3 +154,54 @@ mysql> select name from students order by name desc;
 | Anshu |
 | aksha |
 +-------+
+
+
+alter table students add column course_id int ;
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+ALTER:
+
+mysql> select * from students;
++--------+-------+-----------------+-----------+-----------------+-----------+
+| stu_id | name  | email           | city      | enrollment_date | course_id |
++--------+-------+-----------------+-----------+-----------------+-----------+
+|      1 | aksha | aksha@gmail.com | hyderabad | 2026-04-12      |      NULL |
+|      2 | Raj   | raj@gmail.com   | Vizag     | 2025-07-22      |      NULL |
+|      3 | Anshu | Anshu@gmail.com | chennai   | 2026-03-19      |      NULL |
+|      4 | Sneha | Sneha@gmail.com | Banglore  | 2025-12-20      |      NULL |
+|      5 | Kumar | kumar@gmail.com | kolkata   | 2024-11-03      |      NULL |
++--------+-------+-----------------+-----------+-----------------+-----------+
+4 rows in set (0.00 sec)
+
+
+mysql> update students set course_id =102 where stu_id = 2;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update students set course_id =101 where stu_id = 4;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update students set course_id =104 where stu_id = 1;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update students set course_id =103 where stu_id = 3;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update students set course_id =105 where stu_id = 5;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from students;
++--------+-------+-----------------+-----------+-----------------+-----------+
+| stu_id | name  | email           | city      | enrollment_date | course_id |
++--------+-------+-----------------+-----------+-----------------+-----------+
+|      1 | aksha | aksha@gmail.com | hyderabad | 2026-04-12      |       104 |
+|      2 | Raj   | raj@gmail.com   | Vizag     | 2025-07-22      |       102 |
+|      3 | Anshu | Anshu@gmail.com | chennai   | 2026-03-19      |       103 |
+|      4 | Sneha | Sneha@gmail.com | Banglore  | 2025-12-20      |       101 |
+|      5 | Kumar | kumar@gmail.com | kolkata   | 2024-11-03      |       105 |
++--------+-------+-----------------+-----------+-----------------+-----------+
