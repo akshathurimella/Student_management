@@ -1,0 +1,153 @@
+# Student Management System using SQL
+
+This project demonstrates the implementation of a Student Management System using MySQL. 
+It showcases fundamental and intermediate SQL concepts by creating a relational database consisting of Students, Courses, and Enrollments tables.
+
+
+
+## Technologies Used
+
+- MySQL
+- SQL
+
+##  Database Structure
+
+The database consists of three tables:
+
+### Students
+- Student ID
+- Name
+- Email
+- City
+- Enrollment Date
+
+### Courses
+- Course ID
+- Course Name
+- Course Fee
+
+### Enrollments
+- Enrollment ID
+- Student ID (Foreign Key)
+- Course ID (Foreign Key)
+
+## SQL Concepts Covered
+
+✔ Database Creation
+
+✔ Table Creation
+
+✔ Primary Key
+
+✔ Foreign Key
+
+✔ INSERT
+
+✔ SELECT
+
+✔ WHERE Clause
+
+✔ UPDATE
+
+✔ LIMIT
+
+✔ ORDER BY
+
+✔ GROUP BY
+
+✔ HAVING Clause
+
+✔ Aggregate Functions
+
+✔ INNER JOIN
+
+✔ LEFT JOIN
+
+✔ RIGHT JOIN
+
+✔ ALTER TABLE
+
+✔ Subqueries
+
+### Retrieve Student Details
+
+```sql
+SELECT * FROM students;
+
+### Filter Students by City
+
+```sql
+SELECT *
+FROM students
+WHERE city = 'Chennai';
+
+
+### Maximum Course Fee
+
+
+SELECT course_name,
+MAX(fee)
+FROM courses
+GROUP BY course_name;
+
+### INNER JOIN
+
+```sql
+SELECT
+s.name,
+e.course_id
+FROM students s
+INNER JOIN enrollments e
+ON s.stu_id = e.stu_id;
+```
+
+---
+
+### LEFT JOIN
+
+
+SELECT
+s.name,
+e.course_id
+FROM students s
+LEFT JOIN enrollments e
+ON s.stu_id = e.stu_id;
+
+
+### RIGHT JOIN
+
+
+SELECT
+s.name,
+c.course_name
+FROM students s
+RIGHT JOIN courses c
+ON s.course_id = c.course_id;
+
+
+### Subquery
+
+
+SELECT name
+FROM students
+WHERE stu_id IN
+(
+SELECT stu_id
+FROM enrollments
+WHERE course_id = 101
+);
+
+
+## 📈 Learning Outcomes
+
+Through this project, I learned how to:
+
+- Create tables with relationships
+- Perform CRUD operations
+- Use aggregate functions
+- Write JOIN queries
+- Retrieve meaningful information using subqueries
+- Understand SQL best practices
+
+**Akshay Thurimella**
+
